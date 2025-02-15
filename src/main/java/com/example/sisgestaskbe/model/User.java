@@ -6,6 +6,7 @@ import com.example.sisgestaskbe.enumeration.Role;
 
 public class User {
     
+    private Integer id;
     private String nombre;
     private String email;
     private Role rol;
@@ -18,6 +19,14 @@ public class User {
         this.nombre = nombre;
         this.email = email;
         this.rol = rol;
+    }
+
+    public void setId(Integer id) {
+        this.id = id;
+    }
+
+    public Integer getId() {
+        return id;
     }
 
     public void setNombre(String nombre) {

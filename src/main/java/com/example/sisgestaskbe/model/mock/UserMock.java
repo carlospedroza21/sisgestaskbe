@@ -10,6 +10,7 @@ public class UserMock {
     
     public User newUser() {
         User user1 = new User();
+        user1.setId(1);
         user1.setNombre("Carlos Pedroza");
         user1.setEmail("kuria21@gmail.com");
         user1.setRol(Role.LIDER_TECNICO);
@@ -21,16 +22,19 @@ public class UserMock {
     public List<User> getAllUsersByRole() {
         List<User> users = new ArrayList<>();
         User user1 = new User();
+        user1.setId(1);
         user1.setNombre("Carlos Pedroza");
         user1.setEmail("carlospedroza@gmail.com");
         user1.setRol(Role.LIDER_TECNICO); 
 
         User user2 = new User();
+        user2.setId(2);
         user2.setNombre("Juan Perez");
         user2.setEmail("juanperez@gmail.com");
         user2.setRol(Role.DESARROLLADOR);
 
         User user3 = new User();
+        user3.setId(3);
         user3.setNombre("Maria Lopez");
         user3.setEmail("marialopez@gmail.com");
         user3.setRol(Role.DESARROLLADOR);
