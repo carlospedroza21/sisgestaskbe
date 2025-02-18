@@ -5,7 +5,10 @@ import java.util.List;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
+import com.example.sisgestaskbe.enumeration.TaskState;
 import com.example.sisgestaskbe.model.Task;
+import com.example.sisgestaskbe.observer.LtChannel;
+import com.example.sisgestaskbe.observer.SisgesTask;
 import com.example.sisgestaskbe.repository.TaskRepository;
 
 @Service
@@ -30,6 +33,13 @@ public class TaskServiceImpl implements TaskService {
 
     @Override
     public Task modifyTask(Task task) {
+
+        LtChannel observer  = new LtChannel();
+        SisgesTask observable = new SisgesTask();
+
+        observable.addObserver(observer);
+        observable.setChanges(task);
+
         return taskRepository.update(task);
     }
 }
