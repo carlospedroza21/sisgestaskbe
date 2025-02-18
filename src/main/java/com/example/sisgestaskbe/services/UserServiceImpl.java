@@ -15,7 +15,7 @@ public class UserServiceImpl implements UserService {
     private UserRepository userRepository;
     
 
-    public List<User> getAllUsersByRole() {
+    public List<User> getAllUsersByRole(String role)  {
         return userRepository.getAllUsersByRole();
     }
 
